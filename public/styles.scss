@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:700');
+
+//variables
+$Light-green: #7ed56f;
+$Medium-green: #55c57a;
+$Dark-green: #28b485;
+$Black: #212121;
+$White: #fafafa;
+$Grey: #e0e0e0;
+$Light-grey: #f7f7f7;
+$Orange: #ff9900;
+$Red: #D73433;
+$Blue: #01278D;
+
+/** {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}*/
+
+html,
+body{
+    margin: 0;
+    padding: 0;
+    background: url("https://res.cloudinary.com/dmglopmul/image/upload/v1546452031/projectPhotos/vue-sounds/music.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+ 
+}
