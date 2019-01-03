@@ -282,7 +282,7 @@ export default {
   font-size: 2.5rem;
 }
 
-@media (min-width: 590px) {
+/*@media (min-width: 590px) {
   #display {
     display: flex;
     width: 200px;
@@ -310,5 +310,5 @@ export default {
     font-size: 2rem;
     margin: 0 5px 0 5px;
   }
-}
+}*/
 </style>
