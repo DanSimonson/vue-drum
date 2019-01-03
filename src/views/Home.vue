@@ -192,6 +192,7 @@ export default {
 </script>
 <style scoped lang='scss'>
 @import "../../public/styles.scss";
+
 #drum-machine {
   display: flex;
   flex-direction: column;
@@ -199,6 +200,14 @@ export default {
   text-align: center;
   vertical-align: center;
   color: $Light-grey;
+  margin: 0;
+  padding: 0;
+  background: url("https://res.cloudinary.com/dmglopmul/image/upload/v1546452031/projectPhotos/vue-sounds/music.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100%;
 }
 
 #soundboard {
