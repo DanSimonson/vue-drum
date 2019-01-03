@@ -10,6 +10,8 @@
             v-for="k in keys"
             :key="k.keyCode"
             :id="k.keyCode"
+            :class="[k.isOn ? 'playing' : '', 'k']"
+            @transitionend="removeTransition($event, k)"
             @click="playMe(k.keyCode, k.soundName)"
           >
             <audio class="clip" :src="k.audio" :id="letter(k.keyCode).toUpperCase()"></audio>
@@ -45,7 +47,8 @@ export default {
           soundName: "clap",
           audio: new Audio(
             "https://res.cloudinary.com/dmglopmul/video/upload/v1546375973/projectPhotos/vue-sounds/clap.wav"
-          )
+          ),
+          isOn: false
         },
         {
           keyCode: 87,
@@ -53,7 +56,8 @@ export default {
           soundName: "hihat",
           audio: new Audio(
             "https://res.cloudinary.com/dmglopmul/video/upload/v1546375990/projectPhotos/vue-sounds/hihat.wav"
-          )
+          ),
+          isOn: false
         },
         {
           keyCode: 69,
@@ -61,7 +65,8 @@ export default {
           soundName: "kick",
           audio: new Audio(
             "https://res.cloudinary.com/dmglopmul/video/upload/v1546375999/projectPhotos/vue-sounds/kick.wav"
-          )
+          ),
+          isOn: false
         },
         {
           keyCode: 65,
@@ -69,7 +74,8 @@ export default {
           soundName: "openhat",
           audio: new Audio(
             "https://res.cloudinary.com/dmglopmul/video/upload/v1546376070/projectPhotos/vue-sounds/openhat.wav"
-          )
+          ),
+          isOn: false
         },
         {
           keyCode: 83,
@@ -77,7 +83,8 @@ export default {
           soundName: "boom",
           audio: new Audio(
             "https://res.cloudinary.com/dmglopmul/video/upload/v1546375952/projectPhotos/vue-sounds/boom.wav"
-          )
+          ),
+          isOn: false
         },
         {
           keyCode: 68,
@@ -85,7 +92,8 @@ export default {
           soundName: "ride",
           audio: new Audio(
             "https://res.cloudinary.com/dmglopmul/video/upload/v1546376078/projectPhotos/vue-sounds/ride.wav"
-          )
+          ),
+          isOn: false
         },
         {
           keyCode: 90,
@@ -93,7 +101,8 @@ export default {
           soundName: "snare",
           audio: new Audio(
             "https://res.cloudinary.com/dmglopmul/video/upload/v1546376089/projectPhotos/vue-sounds/snare.wav"
-          )
+          ),
+          isOn: false
         },
         {
           keyCode: 88,
@@ -101,7 +110,8 @@ export default {
           soundName: "tom",
           audio: new Audio(
             "https://res.cloudinary.com/dmglopmul/video/upload/v1546376112/projectPhotos/vue-sounds/tom.wav"
-          )
+          ),
+          isOn: false
         },
         {
           keyCode: 67,
@@ -109,7 +119,8 @@ export default {
           soundName: "tink",
           audio: new Audio(
             "https://res.cloudinary.com/dmglopmul/video/upload/v1546376102/projectPhotos/vue-sounds/tink.wav"
-          )
+          ),
+          isOn: false
         }
       ]
     };
@@ -118,12 +129,19 @@ export default {
     letter: key => {
       return String.fromCharCode(key);
     },
+    removeTransition: function(e, key) {
+      if (e.propertyName !== "transform") {
+        return;
+      }
+      key.isOn = false;
+    },
     playMe: function(keyCode, keyName) {
       const key = this.keys.find(key => {
         return key.keyCode === keyCode;
       });
       console.log(key);
       key.audio.currentTime = 0;
+      key.isOn = true;
       key.audio.play();
       let displayMe = document.getElementById("display");
       displayMe.textContent = keyName;
@@ -184,7 +202,7 @@ export default {
   align-content: center;
   text-align: center;
   vertical-align: center;
-  color: $Red;
+  color: $Light-grey;
 }
 
 #soundboard {
@@ -204,7 +222,7 @@ export default {
   /*border: 5px solid green;*/
 }
 .drum-pad {
-  border: 1px solid $Red;
+  border: 1px solid $White;
   border-radius: 10px;
   cursor: pointer;
   width: 85px;
@@ -246,8 +264,8 @@ export default {
 
 .playing {
   transform: scale(1.1);
-  border-color: #ffc600;
-  box-shadow: 0 0 1rem #ffc600;
+  border-color: black; /*#ffc600;*/
+  box-shadow: 0 0 1rem black; /*#ffc600;*/
 }
 
 @media (min-width: 590px) {
@@ -280,7 +298,7 @@ export default {
   }
 }
 /* javascript 30*/
-.keys {
+/*.keys {
   display: flex;
   flex: 1;
   min-height: 100vh;
@@ -318,5 +336,5 @@ kbd {
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   color: #ffc600;
-}
+}*/
 </style>

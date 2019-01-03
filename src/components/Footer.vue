@@ -30,6 +30,7 @@ export default {
   width: 100%;
   background-color: #00b6f1;
   margin-top: 10px;
+
   /*position: absolute;
   left: 0;
   bottom: 0;
