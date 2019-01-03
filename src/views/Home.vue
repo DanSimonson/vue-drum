@@ -291,7 +291,7 @@ export default {
     align-content: center;
     font-size: 2.5rem;
   }
-}
+}*/
 @media (max-width: 589px) {
   .drum-pad > span {
     font-size: 1rem;
@@ -310,5 +310,5 @@ export default {
     font-size: 2rem;
     margin: 0 5px 0 5px;
   }
-}*/
+}
 </style>
