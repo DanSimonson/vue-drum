@@ -1,24 +1,26 @@
 
 <template>
-  <div class="home">
-    <div id="drum-machine">
-      <h1 class="clear-text">{{title}}</h1>
-      <div id="soundboard">
-        <div id="keyContainer">
-          <div
-            class="drum-pad"
-            v-for="k in keys"
-            :key="k.keyCode"
-            :id="k.keyCode"
-            :class="[k.isOn ? 'playing' : '', 'k']"
-            @transitionend="removeTransition($event, k)"
-            @click="playMe(k.keyCode, k.soundName)"
-          >
-            <audio class="clip" :src="k.audio" :id="letter(k.keyCode).toUpperCase()"></audio>
-            <span>{{k.keyName}}</span>
+  <div>
+    <div class="home">
+      <div id="drum-machine">
+        <h1 class="clear-text">{{title}}</h1>
+        <div id="soundboard">
+          <div id="keyContainer">
+            <div
+              class="drum-pad"
+              v-for="k in keys"
+              :key="k.keyCode"
+              :id="k.keyCode"
+              :class="[k.isOn ? 'playing' : '', 'k']"
+              @transitionend="removeTransition($event, k)"
+              @click="playMe(k.keyCode, k.soundName)"
+            >
+              <audio class="clip" :src="k.audio" :id="letter(k.keyCode).toUpperCase()"></audio>
+              <span>{{k.keyName}}</span>
+            </div>
           </div>
+          <div id="display">{{display}}</div>
         </div>
-        <div id="display">{{display}}</div>
       </div>
     </div>
     <Footer/>
@@ -197,8 +199,9 @@ export default {
   display: flex;
   flex-direction: column;
   align-content: center;
+  justify-content: center;
   text-align: center;
-  vertical-align: center;
+  /*vertical-align: center;*/
   color: $Light-grey;
   margin: 0;
   padding: 0;
@@ -269,6 +272,14 @@ export default {
   transform: scale(1.1);
   border-color: black;
   box-shadow: 0 0 1rem black;
+}
+#display {
+  display: flex;
+  width: 200px;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  font-size: 2.5rem;
 }
 
 @media (min-width: 590px) {

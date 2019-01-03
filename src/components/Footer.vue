@@ -24,9 +24,9 @@ export default {
 @import "../../public/styles.scss";
 
 .footer {
-  position: fixed;
+  /*position: fixed;
   left: 0;
-  bottom: 0;
+  bottom: 0;*/
   width: 100%;
   background-color: #00b6f1;
 }
