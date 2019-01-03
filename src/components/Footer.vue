@@ -2,7 +2,7 @@
   <div class="footer">
     <div class="copyright">
       <p>&copy 2018</p>
-      <a href="https://github.com/DanSimonson/view-quote" target="_blank" aria-label="Facebook">
+      <a href="https://github.com/DanSimonson/vue-drum" target="_blank" aria-label="Facebook">
         <i class="fab fa-github fa-lg">See Code In GitHub Repository</i>
       </a>
       <h4>
@@ -24,9 +24,9 @@ export default {
 @import "../../public/styles.scss";
 
 .footer {
-  /*position: fixed;
+  position: fixed;
   left: 0;
-  bottom: 0;*/
+  bottom: 0;
   width: 100%;
   background-color: #00b6f1;
   margin-top: 3rem;
