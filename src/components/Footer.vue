@@ -29,7 +29,6 @@ export default {
   bottom: 0;
   width: 100%;
   background-color: #00b6f1;
-  margin-top: 3rem;
 }
 
 .copyright {

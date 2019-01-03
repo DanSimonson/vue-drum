@@ -272,7 +272,7 @@ export default {
     font-size: 2.5rem;
   }
 }
-@media (max-width: 590px) {
+@media (max-width: 589px) {
   .drum-pad > span {
     font-size: 1rem;
   }
