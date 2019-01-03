@@ -24,25 +24,23 @@ export default {
 @import "../../public/styles.scss";
 
 .footer {
-  position: fixed;
+  /*position: fixed;
   left: 0;
-  bottom: 0;
+  bottom: 0;*/
   width: 100%;
   background-color: #00b6f1;
-  margin-top: 10px;
-
-  /*position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;*/
+  margin-top: 3rem;
 }
 
 .copyright {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding: 10px;
+  padding: 5px;
   color: $Black;
+  p {
+    margin-right: 10px;
+  }
 
   a {
     margin-right: 10px;

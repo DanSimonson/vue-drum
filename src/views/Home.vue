@@ -20,20 +20,17 @@
         </div>
         <div id="display">{{display}}</div>
       </div>
-      <Footer/>
     </div>
+    <Footer/>
   </div>
 </template>
 
 <script>
 /* eslint-disable */
-//@ is an alias to /src
-//import HelloWorld from "@/components/HelloWorld.vue";
 import Footer from "@/components/Footer.vue";
 export default {
   name: "home",
   components: {
-    //HelloWorld
     Footer
   },
   data() {
@@ -151,7 +148,6 @@ export default {
         return key.keyCode === e.keyCode;
       });
       key.audio.currentTime = 0;
-      //e.target.firstElementChild.play();
       key.audio.play();
       let soundName = "";
       switch (e.keyCode) {
@@ -216,10 +212,8 @@ export default {
   box-shadow: -5px -5px #888;
 }
 #keyContainer {
-  /*width: 400px;*/
   max-width: 400px;
   margin: 0 -15px;
-  /*border: 5px solid green;*/
 }
 .drum-pad {
   border: 1px solid $White;
@@ -264,8 +258,8 @@ export default {
 
 .playing {
   transform: scale(1.1);
-  border-color: black; /*#ffc600;*/
-  box-shadow: 0 0 1rem black; /*#ffc600;*/
+  border-color: black;
+  box-shadow: 0 0 1rem black;
 }
 
 @media (min-width: 590px) {
@@ -297,44 +291,4 @@ export default {
     margin: 0 5px 0 5px;
   }
 }
-/* javascript 30*/
-/*.keys {
-  display: flex;
-  flex: 1;
-  min-height: 100vh;
-  align-items: center;
-  justify-content: center;
-}
-
-.key {
-  border: 0.4rem solid black;
-  border-radius: 0.5rem;
-  margin: 1rem;
-  font-size: 1.5rem;
-  padding: 1rem 0.5rem;
-  transition: all 0.07s ease;
-  width: 10rem;
-  text-align: center;
-  color: white;
-  background: rgba(0, 0, 0, 0.4);
-  text-shadow: 0 0 0.5rem black;
-}
-
-.playing {
-  transform: scale(1.1);
-  border-color: #ffc600;
-  box-shadow: 0 0 1rem #ffc600;
-}
-
-kbd {
-  display: block;
-  font-size: 4rem;
-}
-
-.sound {
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1rem;
-  color: #ffc600;
-}*/
 </style>
